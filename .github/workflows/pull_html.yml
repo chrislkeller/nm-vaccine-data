@@ -29,15 +29,20 @@ jobs:
       - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
-
-      - name: Pipenv for Github Actions
-        # You may pin to the exact commit or the version.
-        uses: VaultVulp/action-pipenv@v2.0.1
+      - id: cache-pipenv
+        uses: actions/cache@v1
         with:
-          # pipenv command and its argument to be executed
-          command:
-            install
-            run python acquire-html.py
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+
+      - name: Install dependencies
+        if: steps.cache-pipenv.outputs.cache-hit != 'true'
+        run: |
+          pipenv install --deploy --dev
+
+      - name: Run script
+        run: |
+          pipenv run python acquire-html.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.
