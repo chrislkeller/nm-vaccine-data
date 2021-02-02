@@ -36,8 +36,8 @@ jobs:
         with:
           # pipenv command and its argument to be executed
           command:
-            pipenv install
-            pipenv run python acquire-html.py
+            install
+            run python acquire-html.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.
