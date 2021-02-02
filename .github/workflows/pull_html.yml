@@ -2,11 +2,10 @@
 
 name: Pull vaccine dashboard html
 # Controls when the action will run.
-on: workflow_dispatch
-
-  #schedule:
-    # - cron:  '0 17 * * *' # every day at 5pm
-    #- cron:  '*/15 * * * *' # every 15 minutes
+on:
+  schedule:
+    - cron:  '0 17 * * *' # every day at 5pm
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
