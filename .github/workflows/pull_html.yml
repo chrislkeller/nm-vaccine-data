@@ -9,8 +9,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  collect-data-job:
-    name: Fetch New Tweets
+  build:
     runs-on: ubuntu-18.04
 
     # Steps represent a sequence of tasks
