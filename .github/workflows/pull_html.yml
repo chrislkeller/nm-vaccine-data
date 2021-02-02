@@ -32,14 +32,3 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8
-
-      # get some Pipenv on
-      - name: Pipenv for Github Actions
-        # You may pin to the exact commit or the version.
-        # uses: VaultVulp/action-pipenv@0e0abc7839b234802947bb8aa1a7c7b8b00a2ff4
-        uses: VaultVulp/action-pipenv@v2.0.1
-        with:
-          # pipenv command and its argument to be executed
-          command: 
-            pipenv install
-            pipenv run python acquire-html.py
