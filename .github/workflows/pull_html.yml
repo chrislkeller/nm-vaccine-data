@@ -26,6 +26,10 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: Install pipenv
+        run: |
+          python -m pip install --upgrade pipenv wheel
+
       - name: Pipenv for Github Actions
         # You may pin to the exact commit or the version.
         uses: VaultVulp/action-pipenv@v2.0.1
