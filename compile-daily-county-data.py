@@ -41,6 +41,7 @@ files = [f for f in listdir(file_path) if isfile(join(file_path, f))]
 output = []
 
 for file in files:
+    logger.debug(file)
     target = os.path.join(file_path, file)
     with open(target, encoding='utf-8') as f:
         raw_json = json.load(f)
