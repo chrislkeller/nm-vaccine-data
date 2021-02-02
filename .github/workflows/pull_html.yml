@@ -43,13 +43,3 @@ jobs:
           command: 
             pipenv install
             pipenv run python acquire-html.py
-
-        # If any new data was fetched, create a new commit to the repo. 
-        - name: Commit data to repo.
-          run: |
-            git config --global user.email "christopherlawrencekeller@gmail.com"
-            git config --global user.name "chrislkeller"
-            git add -A
-            timestamp=$(date -u)
-            git commit -m "Latest data: ${timestamp}" || exit 0
-            git push
