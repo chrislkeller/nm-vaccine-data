@@ -24,16 +24,6 @@ dir_json = "daily-json"
 
 dir_data = "daily-data"
 
-output_json = [
-    {"file": "latest-nm-vaccine-counties.json"},
-    {"file": "{0}-nm-vaccine-counties.json".format(timestamp)},
-]
-
-output_csv = [
-    {"file": "latest-nm-vaccine-counties.csv"},
-    {"file": "{0}-nm-vaccine-counties.csv".format(timestamp)},
-]
-
 file_path = os.path.join(dir_current, dir_json)
 
 files = [f for f in listdir(file_path) if isfile(join(file_path, f))]
@@ -49,14 +39,24 @@ for file in files:
             item['acquired_datestamp'] = file[:17]
             output.append(item)
 
-for f in output_json:
-    file_saved = os.path.join(dir_current, dir_data, f['file'])
-    with open(file_saved, 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=4)
-        logger.debug('File saved to {0}'.format(file_saved))
+    output_json = [
+        {"file": "latest-nm-vaccine-counties.json"},
+        {"file": "{0}-nm-vaccine-counties.json".format(file[:17])},
+    ]
 
-for f in output_csv:
-    file_saved = os.path.join(dir_current, dir_data, f['file'])
-    csv_data = pd.DataFrame(output)
-    csv_data.to_csv(file_saved, encoding='utf-8', index=False)
-    logger.debug('File saved to {0}'.format(file_saved))
+    output_csv = [
+        {"file": "latest-nm-vaccine-counties.csv"},
+        {"file": "{0}-nm-vaccine-counties.csv".format(file[:17])},
+    ]
+
+    for f in output_json:
+        file_saved = os.path.join(dir_current, dir_data, f['file'])
+        with open(file_saved, 'w', encoding='utf-8') as f:
+            json.dump(output, f, ensure_ascii=False, indent=4)
+            logger.debug('File saved to {0}'.format(file_saved))
+
+    for f in output_csv:
+        file_saved = os.path.join(dir_current, dir_data, f['file'])
+        csv_data = pd.DataFrame(output)
+        csv_data.to_csv(file_saved, encoding='utf-8', index=False)
+        logger.debug('File saved to {0}'.format(file_saved))
