@@ -5,8 +5,7 @@ name: Pull vaccine dashboard html
 on:
   schedule:
     # every day at 11:30 pm UTC/4:30 PM Tuesday, in Albuquerque, NM
-    # - cron:  '30 11 * * *'
-    - cron:  '* 1 * * *'
+    - cron:  '30 23 * * *'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
