@@ -41,6 +41,9 @@ for file in files:
     with open(target, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f, 'lxml')
 
+        last_updated = soup.find_all("i")[0].get_text().strip()
+        last_updated = last_updated.replace("Last Updated: ", "")
+
         # get the topline numbers
         topline_keys = []
         keys = soup.find_all(
@@ -58,9 +61,15 @@ for file in files:
 
         compiled_topline = dict(zip_longest(topline_keys, topline_values))
         compiled_topline['acquired_datestamp'] = file[:17]
-        compiled_data.append(compiled_topline)
+        toplineDict = {
+            "type": "topline",
+            "date": last_updated,
+            "data": compiled_topline
+        }
+        compiled_data.append(toplineDict)
 
         # get the manufacturer, age, gender, race and ethnicity figures
+        subgroup_output = []
         subgroup_data = []
         tables = soup.find_all(
             "table", attrs={"class" : "data-table"}
@@ -74,24 +83,62 @@ for file in files:
                 my_dict = dict(zip(keys, items))
                 subgroup_data.append(my_dict)
 
+        newDict = {
+            "type": None,
+            "date": last_updated,
+            "data": []
+        }
+
+        for item in subgroup_data:
+
+            if "Vaccine Manufacturer" in item:
+                logger.debug(item)
+                newDict['type'] = 'manufacturer'
+                newDict['data'].append(item)
+
+            # elif "Age Group" in item:
+            #     newDict['type'] = 'age_groups'
+            #     newDict['data'].append(item)
+            # elif "Gender" in item:
+            #     newDict['type'] = 'gender'
+            #     newDict['data'].append(item)
+            # elif "Race" in item:
+            #     newDict['type'] = 'race'
+            #     newDict['data'].append(item)
+            # elif "Ethnicity" in item:
+            #     newDict['type'] = 'ethnicity'
+            #     newDict['data'].append(item)
+            # else:
+            #     logger.debug(item)
+
+        subgroup_output.append(newDict)
+
+
+        logger.debug(subgroup_output)
+
+
+
+
+
     # compile everything from one file into one big list
-    compiled_data.extend(subgroup_data)
+    # compiled_data.extend(subgroup_data)
+    # logger.debug(compiled_data)
 
-    output_json = [
-        # {"file": "latest-nm-vaccine-dashboard.json"},
-        {"file": "{0}-nm-vaccine-dashboard.json".format(file[:17])},
-    ]
+    # output_json = [
+    #     # {"file": "latest-nm-vaccine-dashboard.json"},
+    #     {"file": "{0}-nm-vaccine-dashboard.json".format(file[:17])},
+    # ]
 
-    output_csv = [
-        # {"file": "latest-nm-vaccine-dashboard.csv"},
-        {"file": "{0}-nm-vaccine-dashboard.csv".format(file[:17])},
-    ]
+    # output_csv = [
+    #     # {"file": "latest-nm-vaccine-dashboard.csv"},
+    #     {"file": "{0}-nm-vaccine-dashboard.csv".format(file[:17])},
+    # ]
 
-    for f in output_json:
-        file_saved = os.path.join(dir_current, dir_data, f['file'])
-        with open(file_saved, 'w', encoding='utf-8') as f:
-            json.dump(compiled_data, f, ensure_ascii=False, indent=4)
-            logger.debug('File saved to {0}'.format(file_saved))
+    # for f in output_json:
+    #     file_saved = os.path.join(dir_current, dir_data, f['file'])
+    #     with open(file_saved, 'w', encoding='utf-8') as f:
+    #         json.dump(compiled_data, f, ensure_ascii=False, indent=4)
+    #         logger.debug('File saved to {0}'.format(file_saved))
 
 # for f in output_csv:
 #     file_saved = os.path.join(dir_current, dir_data, f['file'])
