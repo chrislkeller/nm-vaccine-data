@@ -1,179 +1,218 @@
 [
     {
-        "type": "topline",
-        "date": "2/4/2021",
-        "data": {
-            "Cumulative Doses Administered": "306,389",
-            "Total Primary Doses Administered": "233,998",
-            "Total Booster Doses Administered": "72,391",
-            "Doses Administered in the Last 7 Days": "59,194",
-            "Total Doses Received": "324,575",
-            "Total Registrants": "578,868",
-            "datestamp": "2021-02-04-234142"
+        "topline": {
+            "type": "topline",
+            "date": "2/4/2021",
+            "acquired_datestamp": "2021-02-04-234142",
+            "data": [
+                {
+                    "Cumulative Doses Administered": "306,389",
+                    "acquired_datestamp": "2021-02-04-234142",
+                    "Total Primary Doses Administered": "233,998",
+                    "Total Booster Doses Administered": "72,391",
+                    "Doses Administered in the Last 7 Days": "59,194",
+                    "Total Doses Received": "324,575",
+                    "Total Registrants": "578,868"
+                }
+            ]
+        },
+        "subgroups": {
+            "type": "ethnicity",
+            "date": "2/4/2021",
+            "acquired_datestamp": "2021-02-04-234142",
+            "data": [
+                {
+                    "Vaccine Manufacturer": "Pfizer",
+                    "Doses Administered": 123030,
+                    "% of total doses administered": "68%",
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Vaccine Manufacturer": "Moderna",
+                    "Doses Administered": 59136,
+                    "% of total doses administered": "32%",
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Vaccine Manufacturer": "Unknown",
+                    "Doses Administered": 7.0,
+                    "% of total doses administered": "<0.01%",
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Vaccine Manufacturer": "Total",
+                    "Doses Administered": 182258,
+                    "% of total doses administered": "---",
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Vaccine Manufacturer": "Total",
+                    "Doses Administered": 182258,
+                    "% of total doses administered": "---",
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Age Group": "16-65",
+                    "Cumulative": 182366,
+                    "Population Total": 1301930,
+                    "Doses Administered Per 100 Residents": 14.0,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Age Group": "66-74",
+                    "Cumulative": 61066,
+                    "Population Total": 225086,
+                    "Doses Administered Per 100 Residents": 27.1,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Age Group": "75+ years",
+                    "Cumulative": 62957,
+                    "Population Total": 153589,
+                    "Doses Administered Per 100 Residents": 41.0,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Age Group": "Total",
+                    "Cumulative": 306389,
+                    "Population Total": 1680605,
+                    "Doses Administered Per 100 Residents": 18.2,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Age Group": "Total",
+                    "Cumulative": 306389,
+                    "Population Total": 1680605,
+                    "Doses Administered Per 100 Residents": 18.2,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Gender": "Male",
+                    "Cumulative": 64381,
+                    "Phase 1a": 31128,
+                    "Phase 1b": 33253,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Gender": "Female",
+                    "Cumulative": 106211,
+                    "Phase 1a": 57043,
+                    "Phase 1b": 49186,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Gender": "Transgender",
+                    "Cumulative": 3.0,
+                    "Phase 1a": 2.0,
+                    "Phase 1b": 1.0,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Gender": "Unknown",
+                    "Cumulative": 1058.0,
+                    "Phase 1a": 485.0,
+                    "Phase 1b": 573.0,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Gender": "Total",
+                    "Cumulative": 171653,
+                    "Phase 1a": 88658,
+                    "Phase 1b": 82995,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Gender": "Total",
+                    "Cumulative": 171653,
+                    "Phase 1a": 88658,
+                    "Phase 1b": 82995,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "American Indian or Alaska Native",
+                    "Cumulative": 15424,
+                    "Phase 1a": 9398,
+                    "Phase 1b": 6026,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "Asian",
+                    "Cumulative": 3191,
+                    "Phase 1a": 1977,
+                    "Phase 1b": 1214,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "Black or African-American",
+                    "Cumulative": 2161,
+                    "Phase 1a": 1223,
+                    "Phase 1b": 938.0,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "Native Hawaiin or Other Pactific Islander",
+                    "Cumulative": 199.0,
+                    "Phase 1a": 106.0,
+                    "Phase 1b": 93.0,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "Other Race",
+                    "Cumulative": 19711,
+                    "Phase 1a": 9850,
+                    "Phase 1b": 9861,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "Unknown",
+                    "Cumulative": 34732,
+                    "Phase 1a": 14735,
+                    "Phase 1b": 19997,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "White",
+                    "Cumulative": 96235,
+                    "Phase 1a": 51369,
+                    "Phase 1b": 44866,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Race": "White",
+                    "Cumulative": 96235,
+                    "Phase 1a": 51369,
+                    "Phase 1b": 44866,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Ethnicity": "Hispanic or Latino",
+                    "Cumulative": 73665,
+                    "Phase 1a": 26838,
+                    "Phase 1b": 25778,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Ethnicity": "Non Hispanic or Latino",
+                    "Cumulative": 97210,
+                    "Phase 1a": 43159,
+                    "Phase 1b": 54051,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Ethnicity": "Unknown",
+                    "Cumulative": 54631,
+                    "Phase 1a": 20673,
+                    "Phase 1b": 33958,
+                    "acquired_datestamp": "2021-02-04-234142"
+                },
+                {
+                    "Ethnicity": "Unknown",
+                    "Cumulative": 54631,
+                    "Phase 1a": 20673,
+                    "Phase 1b": 33958,
+                    "acquired_datestamp": "2021-02-04-234142"
+                }
+            ]
         }
-    },
-    {
-        "type": "manufacturer",
-        "date": "2/4/2021",
-        "data": [
-            {
-                "Vaccine Manufacturer": "Pfizer",
-                "Doses Administered": "123,030",
-                "% of total doses administered": "68%"
-            },
-            {
-                "Vaccine Manufacturer": "Moderna",
-                "Doses Administered": "59,136",
-                "% of total doses administered": "32%"
-            },
-            {
-                "Vaccine Manufacturer": "Unknown",
-                "Doses Administered": "7",
-                "% of total doses administered": "<0.01%"
-            },
-            {
-                "Vaccine Manufacturer": "Total",
-                "Doses Administered": "182,258",
-                "% of total doses administered": "---"
-            }
-        ]
-    },
-    {
-        "type": "age_groups",
-        "date": "2/4/2021",
-        "data": [
-            {
-                "Age Group": "16-65",
-                "Cumulative": "182,366",
-                "Population Total": "1,301,930",
-                "Doses Administered Per 100 Residents": "14.0"
-            },
-            {
-                "Age Group": "66-74",
-                "Cumulative": "61,066",
-                "Population Total": "225,086",
-                "Doses Administered Per 100 Residents": "27.1"
-            },
-            {
-                "Age Group": "75+ years",
-                "Cumulative": "62,957",
-                "Population Total": "153,589",
-                "Doses Administered Per 100 Residents": "41.0"
-            },
-            {
-                "Age Group": "Total",
-                "Cumulative": "306,389",
-                "Population Total": "1,680,605",
-                "Doses Administered Per 100 Residents": "18.2"
-            }
-        ]
-    },
-    {
-        "type": "gender",
-        "date": "2/4/2021",
-        "data": [
-            {
-                "Gender": "Male",
-                "Cumulative": "64,381",
-                "Phase 1a": "31,128",
-                "Phase 1b": "33,253"
-            },
-            {
-                "Gender": "Female",
-                "Cumulative": "106,211",
-                "Phase 1a": "57,043",
-                "Phase 1b": "49,186"
-            },
-            {
-                "Gender": "Transgender",
-                "Cumulative": "3",
-                "Phase 1a": "2",
-                "Phase 1b": "1"
-            },
-            {
-                "Gender": "Unknown",
-                "Cumulative": "1058",
-                "Phase 1a": "485",
-                "Phase 1b": "573"
-            },
-            {
-                "Gender": "Total",
-                "Cumulative": "171,653",
-                "Phase 1a": "88,658",
-                "Phase 1b": "82,995"
-            }
-        ]
-    },
-    {
-        "type": "race",
-        "date": "2/4/2021",
-        "data": [
-            {
-                "Race": "American Indian or Alaska Native",
-                "Cumulative": "15,424",
-                "Phase 1a": "9,398",
-                "Phase 1b": "6,026"
-            },
-            {
-                "Race": "Asian",
-                "Cumulative": "3,191",
-                "Phase 1a": "1,977",
-                "Phase 1b": "1,214"
-            },
-            {
-                "Race": "Black or African-American",
-                "Cumulative": "2,161",
-                "Phase 1a": "1,223",
-                "Phase 1b": "938"
-            },
-            {
-                "Race": "Native Hawaiin or Other Pactific Islander",
-                "Cumulative": "199",
-                "Phase 1a": "106",
-                "Phase 1b": "93"
-            },
-            {
-                "Race": "Other Race",
-                "Cumulative": "19,711",
-                "Phase 1a": "9,850",
-                "Phase 1b": "9,861"
-            },
-            {
-                "Race": "Unknown",
-                "Cumulative": "34,732",
-                "Phase 1a": "14,735",
-                "Phase 1b": "19,997"
-            },
-            {
-                "Race": "White",
-                "Cumulative": "96,235",
-                "Phase 1a": "51,369",
-                "Phase 1b": "44,866"
-            }
-        ]
-    },
-    {
-        "type": "ethnicity",
-        "date": "2/4/2021",
-        "data": [
-            {
-                "Ethnicity": "Hispanic or Latino",
-                "Cumulative": "73,665",
-                "Phase 1a": "26,838",
-                "Phase 1b": "25,778"
-            },
-            {
-                "Ethnicity": "Non Hispanic or Latino",
-                "Cumulative": "97,210",
-                "Phase 1a": "43,159",
-                "Phase 1b": "54,051"
-            },
-            {
-                "Ethnicity": "Unknown",
-                "Cumulative": "54,631",
-                "Phase 1a": "20,673",
-                "Phase 1b": "33,958"
-            }
-        ]
     }
 ]
