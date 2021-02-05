@@ -29,6 +29,7 @@ class BuildLatestJson(object):
         data.to_json(file_saved, orient='records')
         logger.debug('File saved to {0}'.format(file_saved))
 
+
 if __name__ == '__main__':
     task_run = BuildLatestJson()
     task_run.handle()
