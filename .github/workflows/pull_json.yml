@@ -4,7 +4,7 @@ name: Pull vaccine dashboard json
 # Controls when the action will run.
 on:
   schedule:
-    # every day at 11:30 pm UTC/4:30 PM Tuesday, in Albuquerque, NM
+    # every day at 11:30 pm UTC/4:45 PM in Albuquerque, NM
     - cron:  '45 23 * * *'
   workflow_dispatch:
 
@@ -42,7 +42,9 @@ jobs:
 
       - name: Run script
         run: |
-          pipenv run python acquire-daily-json.py
+          pipenv run python 1-county-acquire-daily-json.py
+          pipenv run python 2-county-compile-daily-csv.py
+          pipenv run python 5-county-update-latest-files.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.
