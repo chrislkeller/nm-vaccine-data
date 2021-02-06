@@ -42,7 +42,7 @@ jobs:
 
       - name: Run script
         run: |
-          pipenv run acquire-daily-html.py
+          pipenv run 1-dashboard-acquire-daily-html.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.
