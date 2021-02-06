@@ -43,8 +43,6 @@ jobs:
       - name: Run script
         run: |
           pipenv run python acquire-daily-json.py
-          pipenv run python update-latest-county-csv.py
-          pipenv run python build-latest-county-json.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.
