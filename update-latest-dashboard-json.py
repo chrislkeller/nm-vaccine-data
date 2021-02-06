@@ -23,23 +23,23 @@ class UpdateLatestCsv(object):
     dir_data = "daily-data"
     path = os.path.join(dir_current, dir_json)
 
-    def handle(self):
-        latest_output = []
-        files = [os.path.join(self.path, f) for f in listdir(self.path) if isfile(join(self.path, f))]
-        target = max(files, key=os.path.getctime)
-        with open(target, encoding='utf-8') as f:
-            raw_json = json.load(f)
-            for item in raw_json['data']:
-                item['acquired_datestamp'] = os.path.basename(target)[:17]
-                latest_output.append(item)
-        latest_csv = "latest-nm-vaccine-counties.csv"
-        self.update_csv(latest_csv, latest_output)
+    # def handle(self):
+    #     latest_output = []
+    #     files = [os.path.join(self.path, f) for f in listdir(self.path) if isfile(join(self.path, f))]
+    #     target = max(files, key=os.path.getctime)
+    #     with open(target, encoding='utf-8') as f:
+    #         raw_json = json.load(f)
+    #         for item in raw_json['data']:
+    #             item['acquired_datestamp'] = os.path.basename(target)[:17]
+    #             latest_output.append(item)
+    #     latest_csv = "latest-nm-vaccine-counties.csv"
+    #     self.update_csv(latest_csv, latest_output)
 
-    def update_csv(self, file, data):
-        file_saved = os.path.join(self.dir_current, self.dir_data, file)
-        csv_data = pd.DataFrame(data)
-        csv_data.to_csv(file_saved, mode='a', header=False, encoding='utf-8', index=False)
-        logger.debug('Date appended to {0}'.format(file_saved))
+    # def update_csv(self, file, data):
+    #     file_saved = os.path.join(self.dir_current, self.dir_data, file)
+    #     csv_data = pd.DataFrame(data)
+    #     csv_data.to_csv(file_saved, mode='a', header=False, encoding='utf-8', index=False)
+    #     logger.debug('Date appended to {0}'.format(file_saved))
 
 
 if __name__ == '__main__':
