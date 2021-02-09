@@ -16,17 +16,20 @@ logging.basicConfig(
 )
 
 
-class UpdateLatestCsv(object):
+class UpdateLatestJson(object):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
     dir_current = os.path.dirname(os.path.realpath(__file__))
-    dir_json = "daily-json"
+    dir_html = "daily-html"
     dir_data = "daily-data"
-    path = os.path.join(dir_current, dir_json)
+    path = os.path.join(dir_current, dir_html)
 
-    # def handle(self):
-    #     latest_output = []
-    #     files = [os.path.join(self.path, f) for f in listdir(self.path) if isfile(join(self.path, f))]
-    #     target = max(files, key=os.path.getctime)
+    def handle(self):
+        latest_output = []
+        files = [os.path.join(self.path, f) for f in listdir(self.path) if isfile(join(self.path, f))]
+        target = max(files, key=os.path.getctime)
+
+        logger.debug(target)
+
     #     with open(target, encoding='utf-8') as f:
     #         raw_json = json.load(f)
     #         for item in raw_json['data']:
@@ -43,5 +46,5 @@ class UpdateLatestCsv(object):
 
 
 if __name__ == '__main__':
-    task_run = UpdateLatestCsv()
+    task_run = UpdateLatestJson()
     task_run.handle()

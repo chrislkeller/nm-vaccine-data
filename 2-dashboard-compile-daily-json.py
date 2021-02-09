@@ -38,24 +38,33 @@ class CompileJsonFiles(object):
             self.write_json_file("{0}-nm-vaccine-dashboard.json".format(file[:17]), daily_output)
 
     def write_json_file(self, file, data):
-        file_saved = os.path.join(
-            self.dir_current,
-            self.dir_html,
-            file
-        )
-        with open(file_saved, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=4)
-            logger.debug('File saved to {0}'.format(file_saved))
+        file_saved = os.path.join(self.dir_current, self.dir_html, file)
+        if os.path.isfile(file_saved):
+            logger.debug('File already exists at {0}'.format(file_saved))
+        else:
+            with open(file_saved, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+                logger.debug('File saved to {0}'.format(file_saved))
 
     def process(self, file, soup):
-        html_date = soup.find_all("i")[0].get_text().strip()
-        last_updated = html_date.replace("Last Updated: ", "")
+        last_updated = self.get_last_updated(soup)
         topline = self.get_topline_figures(soup, last_updated, file)
         subgroups = self.get_subgroup_figures(soup, last_updated, file)
         return {
             "topline": topline,
             "subgroups": subgroups
         }
+
+    def get_last_updated(self, soup):
+        potential_dates = soup.find_all("i")
+        output = None
+        for date in potential_dates:
+            if str(date).find("Last Updated") > 0:
+                html_date = soup.find_all("i")[0].get_text().strip()
+                output = html_date.replace("Last Updated: ", "")
+            else:
+                output = None
+        return output
 
     def get_topline_figures(self, soup, last_updated, file):
         """Get the topline numbers."""

@@ -37,11 +37,7 @@ class BuildLatestJson(object):
         self.write_json_file("latest-nm-vaccine-dashboard.json", latest_output)
 
     def write_json_file(self, file, data):
-        file_saved = os.path.join(
-            self.dir_current,
-            self.dir_data,
-            file
-        )
+        file_saved = os.path.join(self.dir_current, self.dir_data, file)
         with open(file_saved, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
             logger.debug('File saved to {0}'.format(file_saved))
