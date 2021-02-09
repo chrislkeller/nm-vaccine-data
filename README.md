@@ -5,7 +5,18 @@ Tracking New Mexico Covid-19 Vaccine Data
 
 ## Why is this necessary?
 
-## What do we know?
+## What do we know about the data?
+
+From Matt at DOH.
+
+* New Mexico Department of Health is reporting age brackets according to the [phased distribution plan](https://cv.nmhealth.org/wp-content/uploads/2021/02/2021.1.28-DOH-Phase-Guidance.pdf).
+
+* We’ll be revising the dashboard so it reflects 16-59, 60-74, and 75+.
+
+* Right now, the first of those categories on the dashboard runs 16-65, and 65 isn’t a relevant number in our current plan.
+
+* Population figures come from [New Mexico Indicator-Based Information System](https://ibis.health.state.nm.us/).
+
 
 ## Who is working on this?
 

@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 
 
-class UpdateLatestCsv(object):
+class UpdateLatestFiles(object):
 
     """
     This script is the fifth step in the process
@@ -63,5 +63,5 @@ class UpdateLatestCsv(object):
 
 
 if __name__ == '__main__':
-    task_run = UpdateLatestCsv()
+    task_run = UpdateLatestFiles()
     task_run.handle()
