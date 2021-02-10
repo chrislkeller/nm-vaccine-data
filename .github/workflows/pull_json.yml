@@ -42,6 +42,7 @@ jobs:
 
       - name: Run script
         run: |
+          pipenv run python 1-topline-acquire-daily-json.py
           pipenv run python 1-county-acquire-daily-json.py
           pipenv run python 2-county-compile-daily-csv.py
           pipenv run python 5-county-update-latest-files.py

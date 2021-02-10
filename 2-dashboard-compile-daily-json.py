@@ -30,21 +30,13 @@ class CompileJsonFiles(object):
         files = [f for f in listdir(self.path) if isfile(join(self.path, f))]
         for file in files:
             daily_output = []
-            target = os.path.join(self.path, file)
-            with open(target, 'r', encoding='utf-8') as f:
-                soup = self.get_soup(f)
-                processed_data = self.process(file, soup)
-                daily_output.append(processed_data)
-            self.write_json_file("{0}-nm-vaccine-dashboard.json".format(file[:17]), daily_output)
-
-    def write_json_file(self, file, data):
-        file_saved = os.path.join(self.dir_current, self.dir_html, file)
-        if os.path.isfile(file_saved):
-            logger.debug('File already exists at {0}'.format(file_saved))
-        else:
-            with open(file_saved, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
-                logger.debug('File saved to {0}'.format(file_saved))
+            if file.endswith(".html"):
+                target = os.path.join(self.path, file)
+                with open(target, 'r', encoding='utf-8') as f:
+                    soup = self.get_soup(f)
+                    processed_data = self.process(file, soup)
+                    daily_output.append(processed_data)
+                self.write_json_file("{0}-nm-vaccine-dashboard.json".format(file[:17]), daily_output)
 
     def process(self, file, soup):
         last_updated = self.get_last_updated(soup)
@@ -79,12 +71,15 @@ class CompileJsonFiles(object):
         )
         compiled = {}
         for e in element:
-            key = e.find(
-                "div", attrs={"class": "graph-sub-num-title"}
-            ).get_text().strip()
-            value = e.find(
-                "div", attrs={"class": "big-number"}
-            ).get_text().strip()
+            try:
+                key = e.find(
+                    "div", attrs={"class": "graph-sub-num-title"}
+                ).get_text().strip()
+                value = e.find(
+                    "div", attrs={"class": "big-number"}
+                ).get_text().strip()
+            except AttributeError:
+                logger.debug("This element doesn't exist")
             compiled[key] = value
             compiled["acquired_datestamp"] = output['acquired_datestamp']
         output["data"].append(compiled)
@@ -141,6 +136,15 @@ class CompileJsonFiles(object):
     def get_soup(self, file):
         soup = BeautifulSoup(file, 'lxml')
         return soup
+
+    def write_json_file(self, file, data):
+        file_saved = os.path.join(self.dir_current, self.dir_html, file)
+        if os.path.isfile(file_saved):
+            logger.debug('File already exists at {0}'.format(file_saved))
+        else:
+            with open(file_saved, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+                logger.debug('File saved to {0}'.format(file_saved))
 
     def _to_num(self, value):
         """
