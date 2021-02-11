@@ -1,11 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Pull vaccine dashboard html
+name: Acquire daily county vaccine json
 # Controls when the action will run.
 on:
   schedule:
-    # every day at 11:30 pm UTC/4:30 PM Tuesday, in Albuquerque, NM
-    - cron:  '30 23 * * *'
+    # every day at 11:30 pm UTC/4:45 PM in Albuquerque, NM
+    - cron:  '45 23 * * *'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -42,7 +42,10 @@ jobs:
 
       - name: Run script
         run: |
-          pipenv run python 1-dashboard-acquire-daily-html.py
+          pipenv run python 1-topline-acquire-daily-json.py
+          # pipenv run python 1-county-acquire-daily-json.py
+          # pipenv run python 2-county-compile-daily-csv.py
+          # pipenv run python 5-county-update-latest-files.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.
@@ -51,5 +54,5 @@ jobs:
           git config --global user.name "chrislkeller"
           git add -A
           timestamp=$(date -u)
-          git commit -m "Latest data: ${timestamp}" || exit 0
+          git commit -m "Updates with the latest county-level json data: ${timestamp}" || exit 0
           git push
