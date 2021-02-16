@@ -10,7 +10,20 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
+
+| field                                        | type    | description                                                                                                                  |
+|----------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------------------|
+| date_of_data                                 | date    | Column added by recipient to show the date data were retrieved in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
+| Age Group                                    |         |                                                                                                                              |
+| Cumulative Doses (all phases)                |         |                                                                                                                              |
+| Population Total (16 and over)               |         |                                                                                                                              |
+| Doses per 100 Population                     |         |                                                                                                                              |
+| First Doses                                  |         |                                                                                                                              |
+| Percent of Population Receiving Initial Dose |         |                                                                                                                              |
+| Second Doses                                 |         |                                                                                                                              |
+| Percent of Population Completing Vaccination |         |                                                                                                                              |
+| source                                       | varchar | Column added by recipient to show the source of the data                                                                     |
 
 ### [nm-covid-19-vaccine-administered-by-county.csv](./nm-covid-19-vaccine-administered-by-county.csv)
 
@@ -18,7 +31,20 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
+
+| field                                        | type    | description                                                                                                                  |
+|----------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------------------|
+| date_of_data                                 | date    | Column added by recipient to show the date data were retrieved in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. |
+| county                                       |         |                                                                                                                              |
+| cumulative_doses_all_phases)                 |         |                                                                                                                              |
+| population_total_16_and_over                 |         |                                                                                                                              |
+| doses_per_100_population                     |         |                                                                                                                              |
+| first_doses                                  |         |                                                                                                                              |
+| percent_of_population_receiving_initial_dose |         |                                                                                                                              |
+| second_doses                                 |         |                                                                                                                              |
+| percent_population_completing_vaccination    |         |                                                                                                                              |
+| source                                       | varchar | Column added by recipient to show the source of the data                                                                     |
 
 ### [nm-covid-19-vaccine-administered-by-gender.csv](./nm-covid-19-vaccine-administered-by-gender.csv)
 
@@ -26,7 +52,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-administered-by-race.csv](./nm-covid-19-vaccine-administered-by-race.csv)
 
@@ -34,7 +60,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-by-dose-number.csv](./nm-covid-19-vaccine-by-dose-number.csv)
 
@@ -42,7 +68,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-doses-administered.csv](./nm-covid-19-vaccine-doses-administered.csv)
 
@@ -50,7 +76,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-doses-by-day.csv](./nm-covid-19-vaccine-doses-by-day.csv)
 
@@ -58,7 +84,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-doses-by-provider-type.csv](./nm-covid-19-vaccine-doses-by-provider-type.csv)
 
@@ -66,7 +92,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-doses-by-provider.csv](./nm-covid-19-vaccine-doses-by-provider.csv)
 
@@ -74,7 +100,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-doses-delivered.csv](./nm-covid-19-vaccine-doses-delivered.csv)
 
@@ -82,7 +108,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-ltcf-doses-delivered.csv](./nm-covid-19-vaccine-ltcf-doses-delivered.csv)
 
@@ -90,7 +116,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-ltcf-program-cumulative.csv](./nm-covid-19-vaccine-ltcf-program-cumulative.csv)
 
@@ -98,7 +124,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-manufacturer-doses-by-day.csv](./nm-covid-19-vaccine-manufacturer-doses-by-day.csv)
 
@@ -106,7 +132,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 ### [nm-covid-19-vaccine-orders-and-shipments.csv](./nm-covid-19-vaccine-orders-and-shipments.csv)
 
@@ -114,7 +140,17 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
+
+
+| field                 | type    | description                                                                                                                                                                 |
+|-----------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| date_of_data          | date    | Column added by recipient to show the date data were retrieved in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.                                                |
+| category              | varchar | Category designation. It is unclear what other potential values are, or how the data is stored. For instance, is this a freeform text field of options that can be selected |
+| doses_ordered_total   | integer | Integer to show how many vaccine doses the state of New Mexico has ordered as of Feb. 10, 2021.                                                                             |
+| doses_shipped_total   | integer | Integer to show how many vaccine doses the state of New Mexico has shipped as of Feb. 10, 2021.                                                                             |
+| doses_delivered_total | integer | Integer to show how many vaccine doses the state of New Mexico has delivered as of Feb. 10, 2021.                                                                           |
+| source                | varchar | Column added by recipient to show the source of the data                                                                                                                    |
 
 ### [nm-covid-19-vaccine-percent-of-population.csv](./nm-covid-19-vaccine-percent-of-population.csv)
 
@@ -122,7 +158,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 | field              | type    | description                                                                                                                                                                 |
 |--------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -138,7 +174,7 @@
 
 **What we don't know**:
 
-#### Data dictionary
+**Data dictionary**
 
 | field        | type    | description                                                                                                                                                                                           |
 |--------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
