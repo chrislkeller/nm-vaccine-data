@@ -54,6 +54,17 @@
 
 **Data dictionary**
 
+- date_of_data
+- gender
+- cumulative doses (all phases)
+- population total (16 and over)
+- doses per 100 population
+- first doses
+- percent of population receiving initial dose
+- second doses
+- percent of population completing vaccination
+- source
+
 ### [nm-covid-19-vaccine-administered-by-race.csv](./nm-covid-19-vaccine-administered-by-race.csv)
 
 **What we know**:
@@ -61,6 +72,17 @@
 **What we don't know**:
 
 **Data dictionary**
+
+- date_of_data
+- Race Group
+- Cumulative Doses (all phases)
+- Population Total (16 and over)
+- Doses per 100 Population
+- First Doses
+- Percent of Population Receiving Initial Dose
+- Second Doses
+- Percent of Population Completing Vaccination
+- source
 
 ### [nm-covid-19-vaccine-by-dose-number.csv](./nm-covid-19-vaccine-by-dose-number.csv)
 
@@ -70,6 +92,11 @@
 
 **Data dictionary**
 
+- date_of_data
+- dose_num
+- cumulative_doses_all_phases
+- source
+
 ### [nm-covid-19-vaccine-doses-administered.csv](./nm-covid-19-vaccine-doses-administered.csv)
 
 **What we know**:
@@ -77,6 +104,12 @@
 **What we don't know**:
 
 **Data dictionary**
+
+- date_of_data
+- cumulative_doses_administered
+- doses_administered_last_7 days (2/4 to 2/10)
+- average daily doses administered in last 7 days
+source
 
 ### [nm-covid-19-vaccine-doses-by-day.csv](./nm-covid-19-vaccine-doses-by-day.csv)
 
@@ -86,6 +119,12 @@
 
 **Data dictionary**
 
+- date_of_data
+- date
+- primary_dose
+- booster_dose
+- total	source
+
 ### [nm-covid-19-vaccine-doses-by-provider-type.csv](./nm-covid-19-vaccine-doses-by-provider-type.csv)
 
 **What we know**:
@@ -93,6 +132,12 @@
 **What we don't know**:
 
 **Data dictionary**
+
+- date_of_data
+- provider_type
+- frequency
+- percent
+- source
 
 ### [nm-covid-19-vaccine-doses-by-provider.csv](./nm-covid-19-vaccine-doses-by-provider.csv)
 
@@ -102,6 +147,14 @@
 
 **Data dictionary**
 
+- date_of_data
+- provider_desc
+- clinic_desc
+- vaccination_date
+- practice_type
+- distinct_patient_count
+- source
+
 ### [nm-covid-19-vaccine-doses-delivered.csv](./nm-covid-19-vaccine-doses-delivered.csv)
 
 **What we know**:
@@ -109,6 +162,11 @@
 **What we don't know**:
 
 **Data dictionary**
+
+- date_of_data
+- state_jurisdiction_pharmacy
+- federal
+- source
 
 ### [nm-covid-19-vaccine-ltcf-doses-delivered.csv](./nm-covid-19-vaccine-ltcf-doses-delivered.csv)
 
@@ -118,6 +176,12 @@
 
 **Data dictionary**
 
+- date_of_data
+- transfer - total dose transferred to ltcf
+- ltcf program - first doses transferred
+- ltcf program - second doses transferred
+- source
+
 ### [nm-covid-19-vaccine-ltcf-program-cumulative.csv](./nm-covid-19-vaccine-ltcf-program-cumulative.csv)
 
 **What we know**:
@@ -126,6 +190,20 @@
 
 **Data dictionary**
 
+- date_of_data
+- cumulative_staff_doses_adminstered
+- cumulative_resident_doses
+- cumulative_second_doses_administered
+- cumulative_first_doses_adminstered
+- cumulative_total_doses_administered
+- date
+- first_doses
+- second_doses
+- total_doses
+- staff
+- residents
+- source
+
 ### [nm-covid-19-vaccine-manufacturer-doses-by-day.csv](./nm-covid-19-vaccine-manufacturer-doses-by-day.csv)
 
 **What we know**:
@@ -133,6 +211,14 @@
 **What we don't know**:
 
 **Data dictionary**
+
+- date_of_data
+- date
+- moderna
+- pfizer
+- uf
+- cumulative
+- source
 
 ### [nm-covid-19-vaccine-orders-and-shipments.csv](./nm-covid-19-vaccine-orders-and-shipments.csv)
 

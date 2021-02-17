@@ -1,62 +1,60 @@
-,Date,Moderna,Pfizer,"UF 
-(entered as historical where brand of dose given is unknown)"
-12/14/20,0,123,0,123
-12/15/20,0,487,2,489
-12/16/20,1,3221,4,3226
-12/17/20,0,4398,1,4399
-12/18/20,2,4681,3,4686
-12/19/20,1,1402,1,1404
-12/20/20,0,382,0,382
-12/21/20,117,3303,1,3421
-12/22/20,372,3378,2,3752
-12/23/20,1227,4665,3,5895
-12/24/20,210,453,1,664
-12/25/20,1,17,1,19
-12/26/20,338,53,0,391
-12/27/20,292,276,2,570
-12/28/20,1540,1687,1,3228
-12/29/20,2437,1603,2,4042
-12/30/20,2259,5786,1,8046
-12/31/20,1469,2053,2,3524
-1/1/21,104,56,6,166
-1/2/21,1357,364,3,1724
-1/3/21,536,215,3,754
-1/4/21,2199,1554,6,3759
-1/5/21,2163,3700,7,5870
-1/6/21,2827,8431,12,11270
-1/7/21,2852,6880,5,9737
-1/8/21,2536,8555,5,11096
-1/9/21,2128,2319,1,4448
-1/10/21,675,427,0,1102
-1/11/21,2726,4253,6,6985
-1/12/21,3140,5278,10,8428
-1/13/21,3819,8198,14,12031
-1/14/21,3614,6886,15,10515
-1/15/21,3088,4509,9,7606
-1/16/21,2797,2053,3,4853
-1/17/21,1486,312,0,1798
-1/18/21,2475,3819,6,6300
-1/19/21,3244,4621,4,7869
-1/20/21,5483,11966,10,17459
-1/21/21,4480,11107,11,15598
-1/22/21,3632,8519,10,12161
-1/23/21,3102,2685,7,5794
-1/24/21,781,278,0,1059
-1/25/21,4009,2817,5,6831
-1/26/21,3643,6154,4,9801
-1/27/21,6478,9900,15,16393
-1/28/21,5580,7753,4,13337
-1/29/21,4055,8075,6,12136
-1/30/21,4327,2119,4,6450
-1/31/21,2579,638,5,3222
-2/1/21,3943,2504,4,6451
-2/2/21,4719,4483,6,9208
-2/3/21,5894,7790,3,13687
-2/4/21,6424,8371,5,14800
-2/5/21,5761,5152,5,10918
-2/6/21,3949,4368,2,8319
-2/7/21,1421,168,0,1589
-2/8/21,5801,1190,4,6995
-2/9/21,6244,5733,4,11981
-2/10/21,5337,9740,4,15081
-2/11/21,*pulled at 7:30 am,,,
+date_of_data,date,moderna,pfizer,uf,cumulative,source
+2021-02-11,12/14/20,0,123,0,123,New Mexico Department of Health
+2021-02-11,12/15/20,0,487,2,489,New Mexico Department of Health
+2021-02-11,12/16/20,1,3221,4,3226,New Mexico Department of Health
+2021-02-11,12/17/20,0,4398,1,4399,New Mexico Department of Health
+2021-02-11,12/18/20,2,4681,3,4686,New Mexico Department of Health
+2021-02-11,12/19/20,1,1402,1,1404,New Mexico Department of Health
+2021-02-11,12/20/20,0,382,0,382,New Mexico Department of Health
+2021-02-11,12/21/20,117,3303,1,3421,New Mexico Department of Health
+2021-02-11,12/22/20,372,3378,2,3752,New Mexico Department of Health
+2021-02-11,12/23/20,1227,4665,3,5895,New Mexico Department of Health
+2021-02-11,12/24/20,210,453,1,664,New Mexico Department of Health
+2021-02-11,12/25/20,1,17,1,19,New Mexico Department of Health
+2021-02-11,12/26/20,338,53,0,391,New Mexico Department of Health
+2021-02-11,12/27/20,292,276,2,570,New Mexico Department of Health
+2021-02-11,12/28/20,1540,1687,1,3228,New Mexico Department of Health
+2021-02-11,12/29/20,2437,1603,2,4042,New Mexico Department of Health
+2021-02-11,12/30/20,2259,5786,1,8046,New Mexico Department of Health
+2021-02-11,12/31/20,1469,2053,2,3524,New Mexico Department of Health
+2021-02-11,1/1/21,104,56,6,166,New Mexico Department of Health
+2021-02-11,1/2/21,1357,364,3,1724,New Mexico Department of Health
+2021-02-11,1/3/21,536,215,3,754,New Mexico Department of Health
+2021-02-11,1/4/21,2199,1554,6,3759,New Mexico Department of Health
+2021-02-11,1/5/21,2163,3700,7,5870,New Mexico Department of Health
+2021-02-11,1/6/21,2827,8431,12,11270,New Mexico Department of Health
+2021-02-11,1/7/21,2852,6880,5,9737,New Mexico Department of Health
+2021-02-11,1/8/21,2536,8555,5,11096,New Mexico Department of Health
+2021-02-11,1/9/21,2128,2319,1,4448,New Mexico Department of Health
+2021-02-11,1/10/21,675,427,0,1102,New Mexico Department of Health
+2021-02-11,1/11/21,2726,4253,6,6985,New Mexico Department of Health
+2021-02-11,1/12/21,3140,5278,10,8428,New Mexico Department of Health
+2021-02-11,1/13/21,3819,8198,14,12031,New Mexico Department of Health
+2021-02-11,1/14/21,3614,6886,15,10515,New Mexico Department of Health
+2021-02-11,1/15/21,3088,4509,9,7606,New Mexico Department of Health
+2021-02-11,1/16/21,2797,2053,3,4853,New Mexico Department of Health
+2021-02-11,1/17/21,1486,312,0,1798,New Mexico Department of Health
+2021-02-11,1/18/21,2475,3819,6,6300,New Mexico Department of Health
+2021-02-11,1/19/21,3244,4621,4,7869,New Mexico Department of Health
+2021-02-11,1/20/21,5483,11966,10,17459,New Mexico Department of Health
+2021-02-11,1/21/21,4480,11107,11,15598,New Mexico Department of Health
+2021-02-11,1/22/21,3632,8519,10,12161,New Mexico Department of Health
+2021-02-11,1/23/21,3102,2685,7,5794,New Mexico Department of Health
+2021-02-11,1/24/21,781,278,0,1059,New Mexico Department of Health
+2021-02-11,1/25/21,4009,2817,5,6831,New Mexico Department of Health
+2021-02-11,1/26/21,3643,6154,4,9801,New Mexico Department of Health
+2021-02-11,1/27/21,6478,9900,15,16393,New Mexico Department of Health
+2021-02-11,1/28/21,5580,7753,4,13337,New Mexico Department of Health
+2021-02-11,1/29/21,4055,8075,6,12136,New Mexico Department of Health
+2021-02-11,1/30/21,4327,2119,4,6450,New Mexico Department of Health
+2021-02-11,1/31/21,2579,638,5,3222,New Mexico Department of Health
+2021-02-11,2/1/21,3943,2504,4,6451,New Mexico Department of Health
+2021-02-11,2/2/21,4719,4483,6,9208,New Mexico Department of Health
+2021-02-11,2/3/21,5894,7790,3,13687,New Mexico Department of Health
+2021-02-11,2/4/21,6424,8371,5,14800,New Mexico Department of Health
+2021-02-11,2/5/21,5761,5152,5,10918,New Mexico Department of Health
+2021-02-11,2/6/21,3949,4368,2,8319,New Mexico Department of Health
+2021-02-11,2/7/21,1421,168,0,1589,New Mexico Department of Health
+2021-02-11,2/8/21,5801,1190,4,6995,New Mexico Department of Health
+2021-02-11,2/9/21,6244,5733,4,11981,New Mexico Department of Health
+2021-02-11,2/10/21,5337,9740,4,15081,New Mexico Department of Health

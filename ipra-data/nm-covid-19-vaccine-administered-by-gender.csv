@@ -1,36 +1,5 @@
-Gender,Cumulative Doses (all phases),Population Total (16 and over),Doses per 100 Population,First Doses,Percent of Population Receiving Initial Dose,Second Doses,Percent of Population Completing Vaccination
-Female,230496," 855,052 ",27.0,161724,18.9%,68772,8.0%
-Male,151843," 825,553 ",18.4,109621,13.3%,42222,5.1%
-Transgender, 5 ,,,3,,2,
-Unknown,1498,,,1125,,373,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
+date_of_data,gender,cumulative doses (all phases),population total (16 and over),doses per 100 population,first doses,percent of population receiving initial dose,second doses,percent of population completing vaccination,source
+2021-02-11,Female,230496," 855,052 ",27.0,161724,18.9%,68772,8.0%,NMSIIS
+2021-02-11,Male,151843," 825,553 ",18.4,109621,13.3%,42222,5.1%,NMSIIS
+2021-02-11,Transgender, 5 ,,,3,,2,,NMSIIS
+2021-02-11,Unknown,1498,,,1125,,373,,NMSIIS
