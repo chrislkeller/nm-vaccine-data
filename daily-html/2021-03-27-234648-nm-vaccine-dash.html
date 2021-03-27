@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;callback=initialize&amp;features=es2015%2Ces2016%2Ces2017">
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <link href="css/StyleSheet.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700,900" rel="stylesheet"/>
+  <link href="css/StyleSheet.css" rel="stylesheet"/>
+  <link href="lib/leaflet.min.css" rel="stylesheet"/>
+  <link href="lib/chart.min.css" rel="stylesheet"/>
+  <link href="lib/loading-bar.min.css" rel="stylesheet"/>
+  <link href="lib/kendo.common.min.css" rel="stylesheet"/>
+  <link href="lib/kendo.default.min.css" rel="stylesheet"/>
+  <title>
+  </title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" type="text/javascript">
+  </script>
+  <script async="" defer="" src="https://www.google.com/recaptcha/api.js?onload=recaptchaReady&amp;render=explicit">
+  </script>
+  <script src="/lib/kendo.doh.min.js">
+  </script>
+  <script src="/lib/kendo.listview.min.js">
+  </script>
+  <script src="/lib/leaflet.min.js">
+  </script>
+  <script src="/lib/chart.min.js">
+  </script>
+  <script src="/lib/loading-bar.min.js">
+  </script>
+  <script src="/lib/esri-leaflet.min.js">
+  </script>
+  <script src="/lib/async.min.js">
+  </script>
+  <script src="/lib/moment.min.js">
+  </script>
+  <script src="js/utils.js">
+  </script>
+  <script src="js/public-dashboard-new.js">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ELP3W91XE8">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ELP3W91XE8');
+  </script>
+  <style>
+   .progress-container {
+            background: lightgray;
+            width:100%;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .progress {
+            background: #029602;
+            height: 100%;
+            border-radius: 2px;
+            text-align: right;
+            color:white;
+            padding:6px;
+        }
+
+        .progress-marker {
+            position: absolute;
+            width:3px;
+            padding:3px;
+            background: steelblue;
+            top: -3px;
+            bottom: -3px;
+        }
+
+        .location {
+            margin-bottom: 4px;
+        }
+  </style>
+ </head>
+ <body class="login-bg">
+  <div class="registration-outer-container-map">
+   <div class="registration-container">
+    <div class="left-item col">
+     <div class="padding-left-col">
+      <div class="reg-logo-container">
+       <h1 class="reg-logo">
+        <span>
+         New Mexico Department of Health
+        </span>
+        COVID-19 Vaccine Dashboard
+       </h1>
+      </div>
+      <div class="intro-text">
+       <p>
+        The New Mexico Department of Health (NMDOH) is leading the State of New Mexico’s COVID-19
+                            Vaccination Preparedness Planning in close collaboration with other state agencies, public,
+                            private and tribal partners throughout the state.
+       </p>
+       <a href="https://cv.nmhealth.org/covid-vaccine/" target="_blank">
+        Learn More
+       </a>
+      </div>
+      <br/>
+      <div>
+       <div style="font-weight:bold; font-size:1.2em">
+        Interested in Phase-Specific Vaccine Data?
+       </div>
+       <p>
+        If you are interested in information on New Mexico’s progress through the phase-based distribution plan, please click
+        <a href="/phase-dashboard.html">
+         here
+        </a>
+        .
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="right-item col">
+     <div class="padding-right-col" id="charts">
+      <div class="reg-section" style="display:block">
+       <div class="dash-title">
+        <div class="registration-title">
+         COVID-19 Vaccine Dashboard
+        </div>
+        <div>
+         <i>
+          Last Updated:
+          <span class="notranslate" id="last-updated">
+          </span>
+         </i>
+        </div>
+       </div>
+       <br/>
+       <div class="clear-after" style="padding:0 30px;">
+        <div class="width33">
+         <div class="form-item">
+          <div id="g-translate">
+          </div>
+         </div>
+        </div>
+        <div class="width33">
+        </div>
+        <div class="width33">
+        </div>
+       </div>
+       <div class="dash-number-container">
+        <div class="graph-section-title">
+         Overall Totals
+        </div>
+        <div class="grid">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Total Doses Administered*
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="totalAdministered">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Percentage Of New Mexicans With At Least One Dose**
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="totalPercentPartiallyVaccinated">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Percentage Of New Mexicans Fully Vaccinated**
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="totalPercentFullyVaccinated">
+          </div>
+         </div>
+        </div>
+        <br/>
+        <div class="grid">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Total Doses Received*
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="totalReceived">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Number Of New Mexicans With At Least One Dose
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="totalPartiallyVaccinated">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Number Of New Mexicans Fully Vaccinated
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="totalFullyVaccinated">
+          </div>
+         </div>
+        </div>
+        <br/>
+        <div class="grid" style="padding-bottom: 20px;">
+         <div class="element" style="visibility: hidden;">
+         </div>
+         <div class="element" style="visibility: hidden;">
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Population of New Mexico Eligible to Receive Vaccine (Age 16 and Over)
+          </div>
+          <div class="big-number" data-key="numPatientsRemoved">
+           1,680,605
+          </div>
+         </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="graph-section-title">
+         New Mexico State Data
+        </div>
+        <div class="grid">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Doses Administered In The Last 7 Days
+          </div>
+          <div class="big-number" data-key="sevenDaysDoses">
+          </div>
+         </div>
+         <div class="element" style="visibility: hidden;">
+         </div>
+         <div class="element" style="visibility: hidden;">
+         </div>
+        </div>
+        <br/>
+        <div class="grid">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Total Doses Administered
+          </div>
+          <div class="big-number" data-key="cumulativeDoses">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Percentage Of New Mexicans With At Least One Dose
+          </div>
+          <div class="big-number" data-key="percentPartiallyOrFullyVaccinated">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Percentage Of New Mexicans Fully Vaccinated
+          </div>
+          <div class="big-number" data-key="percentFullyVaccinated">
+          </div>
+         </div>
+        </div>
+        <br/>
+        <div class="grid" style="padding-bottom: 5px;">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Total Doses Received*
+          </div>
+          <div class="big-number" data-key="stateReceived">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Number Of New Mexicans With At Least One Dose
+          </div>
+          <div class="big-number" data-key="primaryDoses">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Number Of New Mexicans Fully Vaccinated
+          </div>
+          <div class="big-number" data-key="boosterDoses">
+          </div>
+         </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="graph-section-title">
+         Federal Data***
+        </div>
+        <div class="grid">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Total Doses Administered*
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="federalAdministered">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Percentage Of New Mexicans With At Least One Dose**
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="federalPercentPartiallyVaccinated">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Percentage Of New Mexicans Fully Vaccinated**
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="federalPercentFullyVaccinated">
+          </div>
+         </div>
+        </div>
+        <br/>
+        <div class="grid" style="padding-bottom: 5px;">
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Total Doses Received*
+          </div>
+          <div class="big-number" data-key="federalReceived">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Number Of New Mexicans With At Least One Dose
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="federalPartiallyVaccinated">
+          </div>
+         </div>
+         <div class="element">
+          <div class="graph-sub-num-title">
+           Number Of New Mexicans Fully Vaccinated
+          </div>
+          <div class="number-placeholder">
+           Data Coming soon
+          </div>
+          <div class="big-number" data-key="federalFullyVaccinated">
+          </div>
+         </div>
+        </div>
+        <p style="font-size: 0.9em;">
+        </p>
+        <div>
+         *Doses administered may occasionally exceed doses received; in some cases, providers have been able to use six doses of Pfizer – not five – from each vial (or 11 doses, not 10, for Moderna).
+        </div>
+        <div>
+         **Percentages are based on the population of New Mexico aged 16 and over – approximately 1,680,605 (
+         <a href="https://ibis.health.state.nm.us/" target="_blank">
+          NM-IBIS
+         </a>
+         ).
+        </div>
+        <div>
+         ***Includes doses from the Indian Health Service, Veterans Administration, Department of Defense, and Bureau of Prisons.
+        </div>
+        <p>
+        </p>
+       </div>
+       <div class="dash-row-alt">
+        <div class="clear-after">
+         <div class="map-right-col">
+          <div class="graph-section-title">
+           Doses Administered By County (New Mexico State Data)
+          </div>
+          <div class="form-item">
+           <span>
+            Base Layer
+           </span>
+           <select id="base-layer">
+            <option data-type="percent" value="percentPartiallyVaccinated">
+             Percent Of Residents With At Least One Dose
+            </option>
+            <option data-type="percent" value="percentFullyVaccinated">
+             Percent Of Residents Fully Vaccinated
+            </option>
+            <!--<option data-type="percent" value="percentRegistered">
+                                                Percent Of Residents Registered
+                                            </option>
+                                            <option style="display:none" data-type="number" value="percentVaccinated">
+                                                Doses Administered Per 100 Residents
+                                            </option>
+                                            <option style="display:none"  data-type="number" value="dosesAdministered">
+                                                Individuals Partially Or Fully Vaccinated
+                                            </option>
+                                            <option style="display:none" data-type="number" value="locations">
+                                                Vaccine Providers
+                                            </option>
+                                            <option style="display:none" data-type="number" value="totalShippedPerThousand">
+                                                Vaccines Received
+                                                Per 100 Residents
+                                            </option>
+                                            <option style="display:none" data-type="number" value="totalShipped">
+                                                Total Vaccines Received
+                                            </option>
+                                            <option style="display:none" data-type="number" value="pfizerShipped">Pfizer Ordered</option>
+                                            <option style="display:none" data-type="number" value="modernaShipped">Moderna Ordered</option>-->
+           </select>
+          </div>
+          <div id="marker-info" style="display:none">
+           <p style="margin-top: 15px; font-size: .8em;">
+            Green dots indicate providers offering vaccine scheduling opportunities through
+            <a href="https://vaccinenm.org">
+             vaccinenm.org
+            </a>
+            . Blue dots indicate other vaccine providers.
+           </p>
+          </div>
+          <div id="map" style="height: 700px;">
+          </div>
+          <div id="rank">
+           <table class="data-table">
+            <thead>
+             <tr>
+              <th>
+               County
+              </th>
+              <th>
+               Population
+              </th>
+              <th id="metric-header-number">
+              </th>
+              <th id="metric-header-percent">
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+            </tbody>
+           </table>
+          </div>
+         </div>
+         <div class="map-left-col">
+          <div id="location-list-container" style="display:none">
+           <div class="form-sub-title">
+            Providers
+           </div>
+           <div class="form-item">
+            <span>
+             Search for a provider
+            </span>
+            <input id="location-filter" type="text"/>
+           </div>
+           <div id="location-list" style="height: 700px; overflow-y:auto; margin-top:2em;">
+           </div>
+          </div>
+          <div>
+           <div class="graph-section-title">
+            How do I schedule an appointment?
+           </div>
+           <div class="clear-after">
+            <div class="margin-bottom">
+             <p>
+              <i>
+               Please register for vaccine at
+               <a href="https://vaccinenm.org">
+                vaccinenm.org
+               </a>
+               . NMDOH will reach out when vaccine is available, and you will be able to schedule an appointment through the website.
+               <b>
+                Please do not show up at provider sites without an appointment.
+               </b>
+              </i>
+             </p>
+            </div>
+            <div class="clear-after">
+             <div class="margin-bottom">
+              <div class="step-title">
+               <span>
+                Step 1:
+               </span>
+               Register at
+               <a href="https://vaccinenm.org">
+                vaccinenm.org
+               </a>
+              </div>
+              <p>
+               Create a profile by filling out the registration form. Once the form is complete, you will receive a confirmation code.
+              </p>
+             </div>
+             <div class="margin-bottom">
+              <div class="step-title">
+               <span>
+                Step 2:
+               </span>
+               Complete Your Profile
+              </div>
+              <p>
+               Use your confirmation code to access your profile and enter your chronic medical conditions, employer information, insurance information, and demographic information.
+              </p>
+             </div>
+            </div>
+            <div class="dash-bg-red margin-bottom">
+             Next, we ask you to wait for the New Mexico Department of Health to notify you when vaccine is available for you in your community.
+            </div>
+            <div class="clear-after">
+             <div class="margin-bottom">
+              <div class="step-title">
+               <span>
+                Step 3:
+               </span>
+               Schedule your Appointment
+              </div>
+              <p>
+               Once you receive a notification, enter your special event code and select a location, day, and schedule your COVID-19 vaccine appointment.
+              </p>
+             </div>
+             <div class="margin-bottom">
+              <div class="step-title">
+               <span>
+                Step 4:
+               </span>
+               Receive the COVID-19 Vaccine
+              </div>
+              <p>
+               On the day of your appointment you will be able to complete the medical questionnaire. Attend the appointment at the location and receive your COVID-19 vaccine.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="dash-row" style="display:none">
+        <div class="graph-section-title">
+         Registration
+        </div>
+        <div>
+         494,948/1,402,800
+        </div>
+        <div class="progress-container" id="registration-progress" style="height:36px">
+         <div class="progress" style="width: 36%; font-weight: bold;font-size:1.2em;padding:8px;">
+          36%
+         </div>
+         <span class="progress-marker" style="left:10%" title="10% - 12/29/2020">
+         </span>
+         <span class="progress-marker" style="left:20%" title="20% - 1/6/2021">
+         </span>
+         <span class="progress-marker" style="left:30%" title="30% - 1/14/2021">
+         </span>
+        </div>
+       </div>
+       <div class="dash-row" style="display:none">
+        <div class="graph-section-title">
+         Total
+        </div>
+        <div class="progress-container" id="total-progress" style="height:36px">
+         <div class="progress" style="width: 8%; font-weight: bold;font-size:1.2em;padding:8px;">
+          8%
+         </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="clear-after">
+         <div class="width25">
+          <div class="graph-sub-title">
+           Phase 1a
+          </div>
+          <div class="progress-container" id="phase-1a-progress" style="height:24px">
+           <div class="progress" style="width: 68%; font-size:1em;padding:4px;">
+            68%
+           </div>
+           <span class="progress-marker" style="left:25%" title="25% - 12/26/2020">
+           </span>
+           <span class="progress-marker" style="left:50%" title="50% - 1/6/2020">
+           </span>
+          </div>
+         </div>
+         <div class="width25">
+          <div class="graph-sub-title">
+           Phase 1b
+          </div>
+          <div class="progress-container" id="phase-1b-progress" style="height:24px">
+           <div class="progress" style="width: 2%; font-size:1em;padding:4px;">
+            2%
+           </div>
+          </div>
+         </div>
+         <div class="width25">
+          <div class="graph-sub-title">
+           Phase 1c
+          </div>
+          <div class="progress-container" id="phase-1c-progress" style="height:24px">
+           <div class="progress" style="width: 1%; font-size:1em;padding:4px;">
+            1%
+           </div>
+          </div>
+         </div>
+         <div class="width25">
+          <div class="graph-sub-title">
+           Phase 2
+          </div>
+          <div class="progress-container" id="phase-2-progress" style="height:24px">
+           <div class="progress" style="width: 1%; font-size:1em;padding:4px;">
+            1%
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="dash-row" style="display:none">
+        <div class="graph-section-title">
+         Vaccines Administered per Day
+        </div>
+        <div class="clear-after margin-bottom">
+         <div class="width33" style="height:400px">
+          <canvas id="vaccines-administered-chart">
+          </canvas>
+         </div>
+         <div class="width33">
+          <div style="height:400px">
+           <canvas id="vaccines-administered-per-day-chart">
+           </canvas>
+          </div>
+         </div>
+         <div class="width33">
+          <div style="height:400px">
+           <canvas id="vaccines-administered-per-week-chart">
+           </canvas>
+          </div>
+         </div>
+        </div>
+        <div>
+         <table class="data-table">
+          <thead>
+           <tr>
+            <th>
+             Vaccine Manufacturer
+            </th>
+            <th>
+             Doses Administered
+            </th>
+            <th>
+             % of total doses administered
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             Pfizer
+            </td>
+            <td>
+             123,030
+            </td>
+            <td>
+             68%
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Moderna
+            </td>
+            <td>
+             59,136
+            </td>
+            <td>
+             32%
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Unknown
+            </td>
+            <td>
+             7
+            </td>
+            <td>
+             0.01%
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Total
+            </td>
+            <td>
+             182,258
+            </td>
+            <td>
+             ---
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="dash-row-alt">
+        <div class="graph-section-title">
+         Vaccine Administered Per Age Group (New Mexico State Data)
+        </div>
+        <div class="margin-bottom">
+         <table class="data-table">
+          <thead>
+           <tr>
+            <th>
+             Age Group
+            </th>
+            <th>
+             Population Total
+            </th>
+            <th>
+             Percent With At Least One Dose
+            </th>
+            <th>
+             Percent Fully Vaccinated
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             16-59
+            </td>
+            <td data-key="num1659">
+             1,166,185
+            </td>
+            <td data-key="percentPartiallyVaccinated1659">
+            </td>
+            <td data-key="percentFullyVaccinated1659">
+            </td>
+           </tr>
+           <tr>
+            <td>
+             60-74
+            </td>
+            <td data-key="num6074">
+             360,831
+            </td>
+            <td data-key="percentPartiallyVaccinated6074">
+            </td>
+            <td data-key="percentFullyVaccinated6074">
+            </td>
+           </tr>
+           <tr>
+            <td>
+             75+ years
+            </td>
+            <td data-key="num75">
+             153,589
+            </td>
+            <td data-key="percentPartiallyVaccinated75">
+            </td>
+            <td data-key="percentFullyVaccinated75">
+            </td>
+           </tr>
+           <tr style="display:none">
+            <td>
+             Total
+            </td>
+            <td>
+             306,389
+            </td>
+            <td>
+             1,680,605
+            </td>
+            <td>
+             18.2
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="clear-after">
+         <div class="width50">
+          <div class="graph-sub-title">
+           Percent With At Least One Dose Or Fully Vaccinated By Age Group (New Mexico State Data)
+          </div>
+          <div>
+           <canvas id="vaccines-administered-by-age-cumulative" style="width:100%">
+           </canvas>
+          </div>
+         </div>
+         <div class="width50">
+         </div>
+        </div>
+        <!--<div class="clear-after">
+                                <div class="width33" style="display:none">
+                                    <div class="graph-sub-title">Vaccines Administered by Age - Phase 1a</div>
+                                    <div>
+                                        <canvas id="vaccines-administered-by-age-phase-1a" style="width:100%"></canvas>
+                                    </div>
+                                </div>
+                                <div class="width33" style="display:none">
+                                    <div class="graph-sub-title">Vaccines Administered by Age - Phase 1b</div>
+                                    <div>
+                                        <canvas id="vaccines-administered-by-age-phase-1b" style="width:100%"></canvas>
+                                    </div>
+                                </div>-->
+       </div>
+      </div>
+      <div class="dash-row" style="display:none">
+       <div class="graph-section-title">
+        Vaccines Administered per Gender
+       </div>
+       <div class="margin-bottom">
+        <table class="data-table">
+         <thead>
+          <tr>
+           <th>
+            Gender
+           </th>
+           <th>
+            Cumulative
+           </th>
+           <th>
+            Phase 1a
+           </th>
+           <th>
+            Phase 1b
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Male
+           </td>
+           <td>
+            64,381
+           </td>
+           <td>
+            31,128
+           </td>
+           <td>
+            33,253
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Female
+           </td>
+           <td>
+            106,211
+           </td>
+           <td>
+            57,043
+           </td>
+           <td>
+            49,186
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Transgender
+           </td>
+           <td>
+            3
+           </td>
+           <td>
+            2
+           </td>
+           <td>
+            1
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Unknown
+           </td>
+           <td>
+            1058
+           </td>
+           <td>
+            485
+           </td>
+           <td>
+            573
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Total
+           </td>
+           <td>
+            171,653
+           </td>
+           <td>
+            88,658
+           </td>
+           <td>
+            82,995
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="clear-after">
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Gender - Cumulative
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-gender-cumulative" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Gender - Phase 1a
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-gender-phase-1a" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Gender - Phase 1b
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-gender-phase-1b" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="dash-row-alt">
+       <div class="graph-section-title">
+        Vaccine Administered by Race/Ethnicity (New Mexico State Data)
+       </div>
+       <div class="margin-bottom">
+        <table class="data-table">
+         <thead>
+          <tr>
+           <th>
+            Race/Ethnicity
+           </th>
+           <th>
+            Population Total
+           </th>
+           <th>
+            Percent With At Least One Dose
+           </th>
+           <th>
+            Percent Fully Vaccinated
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            American Indian or Alaska Native
+           </td>
+           <td data-key="numAmInd">
+            145,589
+           </td>
+           <td data-key="percentPartiallyVaccinatedAmInd">
+           </td>
+           <td data-key="percentFullyVaccinatedAmInd">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Asian or Pacific Islander
+           </td>
+           <td data-key="numAsian">
+            31,147
+           </td>
+           <td data-key="percentPartiallyVaccinatedAsian">
+           </td>
+           <td data-key="percentFullyVaccinatedAsian">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Black or African-American
+           </td>
+           <td data-key="numBlack">
+            36,934
+           </td>
+           <td data-key="percentPartiallyVaccinatedBlack">
+           </td>
+           <td data-key="percentFullyVaccinatedBlack">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Hispanic or Latino
+           </td>
+           <td data-key="numHispanic">
+            780,908
+           </td>
+           <td data-key="percentPartiallyVaccinatedHispanic">
+           </td>
+           <td data-key="percentFullyVaccinatedHispanic">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            White
+           </td>
+           <td data-key="numWhite">
+            686,030
+           </td>
+           <td data-key="percentPartiallyVaccinatedWhite">
+           </td>
+           <td data-key="percentFullyVaccinatedWhite">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Other Race
+           </td>
+           <td>
+            --
+           </td>
+           <td>
+            <span data-key="partiallyVaccinatedOtherRace">
+            </span>
+            *
+           </td>
+           <td>
+            <span data-key="fullyVaccinatedOtherRace">
+            </span>
+            *
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Unknown
+           </td>
+           <td>
+            --
+           </td>
+           <td>
+            <span data-key="partiallyVaccinatedUnknownRace">
+            </span>
+            *
+           </td>
+           <td>
+            <span data-key="fullyVaccinatedUnknownRace">
+            </span>
+            *
+           </td>
+          </tr>
+         </tbody>
+        </table>
+        <p style="font-size:0.9em; margin-top:8px;">
+         *Number of residents; not a percentage
+        </p>
+       </div>
+       <div class="clear-after">
+        <div class="width50">
+         <div class="graph-sub-title">
+          Percent With At Least One Dose Or Fully Vaccinated By Race/Ethnicity (New Mexico State Data)
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-race-chart" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width50">
+        </div>
+       </div>
+       <div class="clear-after" style="display:none">
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Race - Cumulative
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-race-cumulative" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Race - Phase 1a
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-race-phase-1a" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Race - Phase 1b
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-race-phase-1b" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="dash-row" style="display:none">
+       <div class="graph-section-title">
+        Vaccines Administered by Ethnicity
+       </div>
+       <div class="margin-bottom">
+        <table class="data-table">
+         <thead>
+          <tr>
+           <th>
+            Ethnicity
+           </th>
+           <th>
+            Cumulative
+           </th>
+           <th>
+            Phase 1a
+           </th>
+           <th>
+            Phase 1b
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Hispanic or Latino
+           </td>
+           <td>
+            73,665
+           </td>
+           <td>
+            26,838
+           </td>
+           <td>
+            25,778
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Non Hispanic or Latino
+           </td>
+           <td>
+            97,210
+           </td>
+           <td>
+            43,159
+           </td>
+           <td>
+            54,051
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Unknown
+           </td>
+           <td>
+            54,631
+           </td>
+           <td>
+            20,673
+           </td>
+           <td>
+            33,958
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="clear-after">
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Ethnicity - Cumulative
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-ethnicity-cumulative" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Ethnicity - Phase 1a
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-ethnicity-phase-1a" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+        <div class="width33">
+         <div class="graph-sub-title">
+          Vaccines Administered by Ethnicity - Phase 1b
+         </div>
+         <div>
+          <canvas id="vaccines-administered-by-ethnicity-phase-1b" style="width:100%">
+          </canvas>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
