@@ -1,0 +1,97 @@
+{
+    "status": "ok",
+    "message": "",
+    "data": {
+        "data": [
+            {
+                "registrants": 281,
+                "scheduledInitial": 7,
+                "scheduledBooster": 20,
+                "atLeastOneShot": 233,
+                "fullyVaccinated": 203,
+                "phase": "1C-2"
+            },
+            {
+                "registrants": 1724,
+                "scheduledInitial": 10,
+                "scheduledBooster": 33,
+                "atLeastOneShot": 1596,
+                "fullyVaccinated": 1505,
+                "phase": "1B-2"
+            },
+            {
+                "registrants": 360,
+                "scheduledInitial": 2,
+                "scheduledBooster": 6,
+                "atLeastOneShot": 322,
+                "fullyVaccinated": 298,
+                "phase": "1A"
+            },
+            {
+                "registrants": 284,
+                "scheduledInitial": 1,
+                "scheduledBooster": 16,
+                "atLeastOneShot": 249,
+                "fullyVaccinated": 222,
+                "phase": "1C-1"
+            },
+            {
+                "registrants": 536,
+                "scheduledInitial": 0,
+                "scheduledBooster": 0,
+                "atLeastOneShot": 523,
+                "fullyVaccinated": 515,
+                "phase": "1B-0A"
+            },
+            {
+                "registrants": 136,
+                "scheduledInitial": 5,
+                "scheduledBooster": 8,
+                "atLeastOneShot": 108,
+                "fullyVaccinated": 95,
+                "phase": "1B-0B"
+            },
+            {
+                "registrants": 906,
+                "scheduledInitial": 29,
+                "scheduledBooster": 117,
+                "atLeastOneShot": 727,
+                "fullyVaccinated": 555,
+                "phase": "2"
+            },
+            {
+                "registrants": 618,
+                "scheduledInitial": 1,
+                "scheduledBooster": 5,
+                "atLeastOneShot": 570,
+                "fullyVaccinated": 549,
+                "phase": "1B-1"
+            },
+            {
+                "registrants": 287,
+                "scheduledInitial": 6,
+                "scheduledBooster": 13,
+                "atLeastOneShot": 241,
+                "fullyVaccinated": 216,
+                "phase": "1B-3B"
+            },
+            {
+                "registrants": 45,
+                "scheduledInitial": 1,
+                "scheduledBooster": 5,
+                "atLeastOneShot": 38,
+                "fullyVaccinated": 32,
+                "phase": "1B-3A"
+            },
+            {
+                "registrants": 83,
+                "scheduledInitial": 2,
+                "scheduledBooster": 4,
+                "atLeastOneShot": 73,
+                "fullyVaccinated": 64,
+                "phase": "1B-3C"
+            }
+        ],
+        "updated": 1625085882266
+    }
+}
