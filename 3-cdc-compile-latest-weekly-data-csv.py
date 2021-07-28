@@ -49,12 +49,12 @@ class BuildLatestCsv(object):
                         encoding='utf-8', index=False)
         logger.debug('Data appended to {0}'.format(file_saved))
 
-    def create_json(self, csv, json, data):
-        target = os.path.join(self.dir_current, self.dir_data, csv)
-        file_saved = os.path.join(self.dir_current, self.dir_data, json)
-        data = pd.read_csv(target)
-        data.to_json(file_saved, orient='records')
-        logger.debug('Latest data saved to {0}'.format(file_saved))
+    # def create_json(self, csv, json, data):
+    #     target = os.path.join(self.dir_current, self.dir_data, csv)
+    #     file_saved = os.path.join(self.dir_current, self.dir_data, json)
+    #     data = pd.read_csv(target)
+    #     data.to_json(file_saved, orient='records')
+    #     logger.debug('Latest data saved to {0}'.format(file_saved))
 
 
 if __name__ == '__main__':
