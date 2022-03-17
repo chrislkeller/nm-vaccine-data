@@ -48,7 +48,7 @@ jobs:
 
       - name: Run script
         run: |
-          pipenv run python 1-cdc-acquire-daily-community-burden-json.py
+          pipenv run python 1-cdc-acquire-daily-community-levels-by-county-json.py
 
       # If any new data was fetched, create a new commit to the repo.
       - name: Commit data to repo.

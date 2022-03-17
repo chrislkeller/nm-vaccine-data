@@ -21,6 +21,8 @@ individuals make decisions based on their local context
 and their unique needs."
 
 https://www.cdc.gov/coronavirus/2019-ncov/science/community-levels.html
+
+https://www.cdc.gov/coronavirus/2019-ncov/modules/science/us-community-levels-by-county.json
 """
 
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
@@ -29,7 +31,7 @@ dir_current = os.path.dirname(os.path.realpath(__file__))
 
 dir_json = "daily-json"
 
-file_output = "{0}-cdc-daily-community-burden-by-county.json".format(timestamp)
+file_output = "{0}-cdc-daily-community-levels-by-county.json".format(timestamp)
 
 file_saved = os.path.join(dir_current, dir_json, file_output)
 
