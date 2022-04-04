@@ -35,7 +35,7 @@ file_output = "{0}-cdc-daily-community-levels-by-county.json".format(timestamp)
 
 file_saved = os.path.join(dir_current, dir_json, file_output)
 
-target_url = "https://www.cdc.gov/coronavirus/2019-ncov/modules/science/us-community-levels-by-county.json"
+target_url = "https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=integrated_county_latest_external_data"
 
 response = requests.get(target_url)
 
